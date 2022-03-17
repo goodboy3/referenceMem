@@ -69,7 +69,7 @@ func RunRefJob() {
 				Updated: time.Now().Unix(),
 				Created: time.Now().Unix(),
 			}
-			reference.GetInstance().Set(strconv.FormatUint(u.ID, 10), u, 300)
+			reference.GetInstance().Set(strconv.FormatUint(u.ID, 10), u, 60)
 		}
 	}, errors.PanicHandler, 1, UJob.TYPE_PANIC_REDO, nil, nil)
 }
